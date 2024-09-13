@@ -1,1 +1,1 @@
-This project is intended to display a payment form with Stripe integration.
+This project is intended to use Stripe integration for payment in Golang.
