@@ -38,7 +38,7 @@ func (acc ApiCustomerController) Handle(w http.ResponseWriter, r *http.Request) 
         return 
     }
 
-    // Note, we are doing this because the backend does not have a persisting storage (DB).
+    // Note, we are doing this because the backend does not have a persisting storage.
     // !!! DO NOT DO THIS IN WORKING EXAMPLES !!!
     custRef := uuid.New()
     cookie := &http.Cookie{

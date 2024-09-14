@@ -15,11 +15,8 @@ func (apic ApiPaymentIntentController) Handle(w http.ResponseWriter, r *http.Req
     }
 
 	custRef := r.FormValue("customerReference")
-	amount := r.FormValue("amount")
-	currency := r.FormValue("currency")
 	
-
-	cookie, err := r.Cookie("username")
+	cookie, err := r.Cookie(custRef)
     if err != nil {
         if err == http.ErrNoCookie {
             http.Error(w, "Cookie not found", http.StatusNotFound)
@@ -29,4 +26,7 @@ func (apic ApiPaymentIntentController) Handle(w http.ResponseWriter, r *http.Req
 
         return
     }
+
+    amount := r.FormValue("amount")
+	currency := r.FormValue("currency")
 }
